@@ -43,7 +43,7 @@
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "drop-mongodb-collections": "^1.2.4",
-    "eslint": "^5.9.0",
+    "eslint": "^5.16.0",
     "mocha": "^5.2.0",
     "mongojs": "^2.6.0",
     "nyc": "^13.1.0",
