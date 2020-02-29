@@ -1,13 +1,13 @@
 {
   "name": "mongoist",
-  "version": "2.0.0",
+  "version": "2.4.0",
   "description": "Mongodb driver inspired by mongojs built with async/await in mind",
   "main": "index.js",
   "engines": {
     "node": ">=6"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test nyc --reporter=text-summary mocha --recursive --require babel-polyfill --require babel-core/register",
+    "test": "nyc --reporter=text-summary mocha --recursive --require @babel/polyfill --require @babel/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saintedlama/mongoist.git"
+    "url": "git+https://github.com/mongoist/mongoist.git"
   },
   "keywords": [
     "mongodb",
@@ -28,25 +28,25 @@
   "author": "Christoph Walcher <christoph.walcher@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saintedlama/mongoist/issues"
+    "url": "https://github.com/mongoist/mongoist/issues"
   },
-  "homepage": "https://github.com/saintedlama/mongoist#readme",
+  "homepage": "https://github.com/mongoist/mongoist#readme",
   "dependencies": {
-    "debug": "^4.1.0",
-    "mongodb": "^3.1.10"
+    "debug": "^4.1.1",
+    "mongodb": "^3.3.2"
   },
   "devDependencies": {
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
+    "@babel/core": "^7.7.2",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.2",
-    "cross-env": "^5.2.0",
-    "drop-mongodb-collections": "^1.2.4",
-    "eslint": "^5.16.0",
-    "mocha": "^5.2.0",
-    "mongojs": "^2.6.0",
-    "nyc": "^13.1.0",
-    "standard-version": "^4.4.0"
+    "coveralls": "^3.0.7",
+    "drop-mongodb-collections": "^1.2.5",
+    "eslint": "^6.5.1",
+    "mocha": "^6.2.1",
+    "mongojs": "^3.0.0",
+    "nyc": "^14.1.1",
+    "standard-version": "^7.0.0"
   }
 }

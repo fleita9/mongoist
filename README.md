@@ -4,9 +4,8 @@ A [node.js](http://nodejs.org) module for mongodb built with async/await in mind
 
 Mongoist driver is heavily inspired by mongojs.
 
-[![Build Status](https://travis-ci.org/saintedlama/mongoist.svg?branch=master)](https://travis-ci.org/saintedlama/mongoist)
-[![Coverage Status](https://coveralls.io/repos/github/saintedlama/mongoist/badge.svg?branch=master)](https://coveralls.io/github/saintedlama/mongoist?branch=master)
-[![mongoist analyzed by Codellama.io](https://app.codellama.io/api/badges/5a0439591b4c363a0f9427e6/31ad4e758e5c06b9e1d9d7e0d74cb475)](https://app.codellama.io/repositories/5a0439591b4c363a0f9427e6)
+[![Build Status](https://travis-ci.org/mongoist/mongoist.svg?branch=master)](https://travis-ci.org/mongoist/mongoist)
+[![Coverage Status](https://coveralls.io/repos/github/mongoist/mongoist/badge.svg?branch=master)](https://coveralls.io/github/mongoist/mongoist?branch=master)
 
 ## Motivation
 
@@ -43,6 +42,14 @@ not yet opened database connection:
 
 ```javascript
 module.exports = mongoist(connectionString);
+```
+
+Along these same lines, connection information may not be available synchronously. The connection
+information provided to `mongoist` can be contained in a `Promise`, affording for gathering the
+connection information from arbitrary sources (e.g. `mongo-memory-server`):
+
+```javascript
+module.exports = mongoist(Promise.resolve());
 ```
 
 ## Usage
@@ -179,6 +186,14 @@ or `db.collection.runCommand()`
 
 ```js
 const result = await db.things.runCommand('count');
+console.log(result);
+```
+
+Similarly, you can use `db.adminCommand()` to run a command on the `admin` database of the
+MongoDB cluster or instance you're connected to:
+
+```js
+const result = await db.adminCommand({currentOp: 1});
 console.log(result);
 ```
 
@@ -319,6 +334,10 @@ See https://docs.mongodb.com/manual/reference/method/db.collection.remove/
 
 See https://docs.mongodb.com/manual/reference/method/db.collection.remove/
 
+#### `db.collection.replaceOne(filter, replacement, [options])`
+
+See https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/
+
 #### `db.collection.runCommand(command)`
 
 See https://docs.mongodb.com/manual/reference/method/db.collection.runCommand/
@@ -358,10 +377,19 @@ db.someCollection.findAsCursor()
     console.log('all documents piped to writeableStream');
   });
 ```
+#### `cursor.addCursorFlag(flag, value)`
+
+See https://mongodb.github.io/node-mongodb-native/3.1/api/Cursor.html#addCursorFlag
 
 #### `cursor.batchSize(size)`
 
 See https://docs.mongodb.com/manual/reference/method/cursor.batchSize/
+
+#### `cursor.collation(collationDocument)`
+
+See https://docs.mongodb.com/manual/reference/method/cursor.collation/
+
+Only supported with MongoDB 3.4 or higher.
 
 #### `cursor.count()`
 
@@ -448,6 +476,11 @@ See https://docs.mongodb.com/manual/reference/method/db.getLastErrorObj/
 #### `db.runCommand(command)`
 
 See https://docs.mongodb.com/manual/reference/method/db.runCommand/
+
+
+#### `db.adminCommand(command)`
+
+See https://mongodb.github.io/node-mongodb-native/3.3/api/Db.html#executeDbAdminCommand
 
 #### `db.stats()`
 

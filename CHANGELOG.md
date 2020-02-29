@@ -1,6 +1,40 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.4.0](https://github.com/mongoist/mongoist/compare/v2.3.0...v2.4.0) (2019-12-16)
+
+
+### Features
+
+* **connect:** support promises for `connectionString` ([#39](https://github.com/mongoist/mongoist/issues/41)) ([71b1e61](https://github.com/mongoist/mongoist/commit/71b1e61c0abe51db03457520f7cd7af13176a45c))
+
+## [2.3.0](https://github.com/mongoist/mongoist/compare/v2.2.0...v2.3.0) (2019-12-13)
+
+
+### Features
+
+* **cursor:** support collations ([#39](https://github.com/mongoist/mongoist/issues/39)) ([1f376ed](https://github.com/mongoist/mongoist/commit/1f376ed20d48e21b22701ef226b89c71af7ea471))
+
+## [2.2.0](https://github.com/mongoist/mongoist/compare/v2.1.0...v2.2.0) (2019-11-23)
+
+
+### Features
+
+* **cursor:** support async iteration ([#36](https://github.com/mongoist/mongoist/issues/36)) ([9a826ad](https://github.com/mongoist/mongoist/commit/9a826ad311af52878b009ba896225d8ac1171f26)), closes [#35](https://github.com/mongoist/mongoist/issues/35)
+
+## [2.1.0](https://github.com/mongoist/mongoist/compare/v2.0.0...v2.1.0) (2019-11-09)
+
+
+### Features
+
+* add addCursorFlag method ([#26](https://github.com/mongoist/mongoist/issues/26)) ([318c975](https://github.com/mongoist/mongoist/commit/318c975a78b8271a341d4a5a93c48316b9e45bf7))
+* Add adminCommand database method ([#30](https://github.com/mongoist/mongoist/issues/30)) ([07705c5](https://github.com/mongoist/mongoist/commit/07705c555383d6c1c11c3904e85f0356f72db00b))
+
+
+### Bug Fixes
+
+* remove cross-env to not break builds in node 6 and 7 ([e677ec7](https://github.com/mongoist/mongoist/commit/e677ec7a27da6b30675ee6838622076a09726b23))
 
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/saintedlama/mongoist/compare/v1.7.4...v2.0.0) (2018-12-06)
